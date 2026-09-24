@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libros por Categoría</title>
+</head>
+<body>
+    <h1>Libros por Categoría</h1>
+    <ul>
+        {% for libro in libros %}
+            <li>{{ libro.titulo }} - {{ libro.categoria.nombre }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'lista_libros' %}">Volver a la lista de libros</a>
+    <a href="{% url 'agregar_libro' %}">Agregar un nuevo libro</a>
+    <!-- <a href="{% url 'categorias' %}">Ver todas las categorías</a> -->
+
+</body>
+</html>

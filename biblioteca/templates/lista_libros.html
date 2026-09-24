@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliotech - Lista de Libros</title>
+</head>
+<body>
+    <h1>Lista de Libros</h1>
+    <ul>
+        {% for libro in libros %}
+            <li>
+                <img src="{{ libro.imagen_url }}" alt="{{ libro.titulo }}" width="50" height="75">
+                <p>{{ libro.autor }}</p>
+                <p>{{ libro.precio_prestamo }}</p>
+                <p>{{ libro.disponible }}</p>
+                <a href="{% url 'detalle_libro' libro.id %}">{{ libro.titulo }}</a> - {{ libro.categoria.nombre }}
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'agregar_libro' %}">Agregar un nuevo libro</a>
+    <a href="{% url 'lista_libros' %}">Volver a la lista de libros</a>
+</body>
+</html>

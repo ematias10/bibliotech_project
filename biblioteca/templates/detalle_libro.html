@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Libro</title>
+</head>
+<body>
+    <h1>Detalle del Libro</h1>
+    <p>ISBN: {{ libro.isbn }}</p>
+    <p>Título: {{ libro.titulo }}</p>
+    <p>Autor: {{ libro.autor }}</p>
+    <p>Categoría: {{ libro.categoria }}</p>
+    <p>Precio: {{ libro.precio_prestamo }}</p>
+    <p>Disponibilidad: {{ libro.disponible }}</p>
+    <p>Stock: {{ libro.stock_copias }}</p>
+
+    <a href="{% url 'lista_libros' %}">Volver a la lista de libros</a>
+    <a href="{% url 'agregar_libro' %}">Agregar un nuevo libro</a>
+
+</body>
+</html>
